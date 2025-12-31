@@ -2,19 +2,18 @@ const botaoNao = document.getElementById("nao");
 const contadorSpan = document.getElementById("vezes");
 let vezesNegou = 0;
 
-// função para mover o botão para posição aleatória
 function fugirBotao() {
+    // largura e altura máximas para que o botão não saia da tela
     const maxX = window.innerWidth - botaoNao.offsetWidth;
     const maxY = window.innerHeight - botaoNao.offsetHeight;
 
+    // posições aleatórias dentro da tela
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
 
-    botaoNao.style.position = 'absolute';
-    botaoNao.style.left = x + 'px';
-    botaoNao.style.top = y + 'px';
+    botaoNao.style.left = x + "px";
+    botaoNao.style.top = y + "px";
 
-    // contador
     vezesNegou++;
     contadorSpan.innerText = vezesNegou;
 }
@@ -22,9 +21,5 @@ function fugirBotao() {
 // PC: mouse entra
 botaoNao.addEventListener("mouseenter", fugirBotao);
 
-// Celular: toque na tela
-document.addEventListener("touchstart", function(event) {
-    if(event.target === botaoNao) {
-        fugirBotao();
-    }
-});
+// Celular: toque
+botaoNao.addEventListener("touchstart", fugirBotao);
