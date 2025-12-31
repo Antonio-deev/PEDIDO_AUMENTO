@@ -22,3 +22,9 @@ botaoNao.addEventListener("mouseenter", fugirBotao);
 
 // Celular: toque
 botaoNao.addEventListener("touchstart", fugirBotao);
+
+// Botão "Sim" navega
+const botaoSim = document.getElementById("sim");
+botaoSim.addEventListener("click", () => {
+    window.location.href = "indexII.html";
+});
