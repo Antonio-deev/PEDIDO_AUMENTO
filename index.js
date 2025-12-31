@@ -3,9 +3,11 @@ const contadorSpan = document.getElementById("vezes");
 let vezesNegou = 0;
 
 function fugirBotao() {
-    const margin = 20; // margem mínima da tela
-    const maxX = window.innerWidth - botaoNao.offsetWidth - margin;
-    const maxY = window.innerHeight - botaoNao.offsetHeight - margin;
+    const container = botaoNao.parentElement; // container relativo
+    const margin = 10;
+
+    const maxX = container.offsetWidth - botaoNao.offsetWidth - margin;
+    const maxY = container.offsetHeight - botaoNao.offsetHeight - margin;
 
     const x = margin + Math.random() * maxX;
     const y = margin + Math.random() * maxY;
@@ -22,9 +24,3 @@ botaoNao.addEventListener("mouseenter", fugirBotao);
 
 // Celular: toque
 botaoNao.addEventListener("touchstart", fugirBotao);
-
-// Botão "Sim" navega
-const botaoSim = document.getElementById("sim");
-botaoSim.addEventListener("click", () => {
-    window.location.href = "indexII.html";
-});
