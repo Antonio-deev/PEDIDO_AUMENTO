@@ -1,15 +1,20 @@
-/* DEIXANDO O MOUSE "ARISCO" */
-
 const botaoNao = document.getElementById("nao");
 const contadorSpan = document.getElementById("vezes");
 let vezesNegou = 0;
 
+// função para mover o botão para posição aleatória
 function fugirBotao() {
-    const x = Math.random() * 300 - 150;
-    const y = Math.random() * 200 - 100;
+    const maxX = window.innerWidth - botaoNao.offsetWidth;
+    const maxY = window.innerHeight - botaoNao.offsetHeight;
 
-    botaoNao.style.transform = `translate(${x}px, ${y}px)`;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
+    botaoNao.style.position = 'absolute';
+    botaoNao.style.left = x + 'px';
+    botaoNao.style.top = y + 'px';
+
+    // contador
     vezesNegou++;
     contadorSpan.innerText = vezesNegou;
 }
@@ -17,5 +22,9 @@ function fugirBotao() {
 // PC: mouse entra
 botaoNao.addEventListener("mouseenter", fugirBotao);
 
-// Celular: toque
-botaoNao.addEventListener("touchstart", fugirBotao);
+// Celular: toque na tela
+document.addEventListener("touchstart", function(event) {
+    if(event.target === botaoNao) {
+        fugirBotao();
+    }
+});
