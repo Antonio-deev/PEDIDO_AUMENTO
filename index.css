@@ -51,6 +51,17 @@ p {
 
 /* DEFININDO FORMATAÇÃO DO CORPO DO SITE */
 
+.container {
+  width: 100%;
+  max-width: 1200px; /* Limita a largura em telas grandes */
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
 
     display: flex;
@@ -131,5 +142,15 @@ body {
     cursor: pointer;
 
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .menu {
+    flex-direction: column;
+  }
+}
+
 
 
