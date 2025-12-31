@@ -2,15 +2,12 @@ const botaoNao = document.getElementById("nao");
 const contadorSpan = document.getElementById("vezes");
 let vezesNegou = 0;
 
+// Função para o botão "Não" fugir perto do centro
 function fugirBotao() {
-    const container = botaoNao.parentElement; // container relativo
-    const margin = 10;
+    const amplitude = 80; // pixels que ele pode se mover do centro
 
-    const maxX = container.offsetWidth - botaoNao.offsetWidth - margin;
-    const maxY = container.offsetHeight - botaoNao.offsetHeight - margin;
-
-    const x = margin + Math.random() * maxX;
-    const y = margin + Math.random() * maxY;
+    const x = (window.innerWidth / 2) - (botaoNao.offsetWidth / 2) + (Math.random() * amplitude * 2 - amplitude);
+    const y = (window.innerHeight / 2) - (botaoNao.offsetHeight / 2) + (Math.random() * amplitude * 2 - amplitude);
 
     botaoNao.style.left = x + "px";
     botaoNao.style.top = y + "px";
@@ -24,3 +21,9 @@ botaoNao.addEventListener("mouseenter", fugirBotao);
 
 // Celular: toque
 botaoNao.addEventListener("touchstart", fugirBotao);
+
+// Botão "Sim" navega
+const botaoSim = document.getElementById("sim");
+botaoSim.addEventListener("click", () => {
+    window.location.href = "indexII.html";
+});
