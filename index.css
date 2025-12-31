@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* evita scroll */
+    overflow: hidden;
     z-index: -1;
 }
 
@@ -15,9 +15,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* cobre toda a tela sem distorcer */
+    object-fit: cover; /* cobre toda a tela */
 }
-
 
 /* TEXTOS */
 h1 {
@@ -100,7 +99,7 @@ body {
 
 /* Botão "Não" centralizado e "dançante" */
 .botões .nao {
-    position: fixed; /* fixa na tela */
+    position: fixed; /* fixo na tela */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -118,7 +117,12 @@ body {
     z-index: 20;
 }
 
-
-
-
-
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .fundo-gif {
+        object-fit: cover;
+    }
+}
