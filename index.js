@@ -2,12 +2,19 @@ const botaoNao = document.getElementById("nao");
 const contadorSpan = document.getElementById("vezes");
 let vezesNegou = 0;
 
-// Função para o botão "Não" fugir perto do centro
 function fugirBotao() {
     const amplitude = 80; // pixels que ele pode se mover do centro
+    const margin = 10;    // margem da tela
 
-    const x = (window.innerWidth / 2) - (botaoNao.offsetWidth / 2) + (Math.random() * amplitude * 2 - amplitude);
-    const y = (window.innerHeight / 2) - (botaoNao.offsetHeight / 2) + (Math.random() * amplitude * 2 - amplitude);
+    const centroX = window.innerWidth / 2 - botaoNao.offsetWidth / 2;
+    const centroY = window.innerHeight / 2 - botaoNao.offsetHeight / 2;
+
+    let x = centroX + (Math.random() * amplitude * 2 - amplitude);
+    let y = centroY + (Math.random() * amplitude * 2 - amplitude);
+
+    // garante que o botão nunca saia da tela
+    x = Math.max(margin, Math.min(x, window.innerWidth - botaoNao.offsetWidth - margin));
+    y = Math.max(margin, Math.min(y, window.innerHeight - botaoNao.offsetHeight - margin));
 
     botaoNao.style.left = x + "px";
     botaoNao.style.top = y + "px";
