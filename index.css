@@ -71,16 +71,17 @@ body {
 
 /* DEFININDO FORMATAÇÃO DE BOTÕES */
 
-.botões{
-    align-items: center;
+.botões {
     display: flex;
     gap: 20px;
+    position: relative; /* container relativo */
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     z-index: 10;
-    position: relative; /* mantido para o botão "Sim" */
 }
 
-.botões .sim{
+.botões .sim {
     border-radius: 20px;
     width: 150px;
     height: 65px;
@@ -89,7 +90,7 @@ body {
     font-weight: bold;
     border-style: inherit;
     box-shadow: 2px 2px 10px #f3f3f3,
-                inset 1px 1px 5px ;
+                inset 1px 1px 5px;
     color: #ffffff;
     background: linear-gradient(to bottom, #4ab147, #6bff6b);
     cursor: pointer;
@@ -104,29 +105,5 @@ body {
     transform: scale(0.95);
 }
 
-/* Ajuste necessário: o botão "Não" precisa ser absoluto para fugir */
-.botões .nao{
-    position: absolute; /* <--- adicionado */
-    border-radius: 20px;
-    width: 150px;
-    height: 40px;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: bold;
-    color: #ffffff;
-    border-style: inherit;
-    box-shadow: 2px 2px 10px #f3f3f3,
-                inset 1px 1px 5px ;
-    background: linear-gradient(to bottom, #ff2727, #9c2222);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-    .menu {
-        flex-direction: column;
-    }
-}
+/* Botão "Não" absoluto dentro do container para fugir */
+.bot
