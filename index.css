@@ -105,16 +105,14 @@ body {
     transform: scale(0.95);
 }
 
-/* Botão "Não" absoluto dentro do container para fugir */
 .botões .nao {
-    position: absolute; /* relativo ao container .botões */
-    left: 0;  /* posição inicial alinhada ao "Sim" */
-    top: 0;   /* posição inicial alinhada ao "Sim" */
+    position: absolute; 
+    left: 170px; /* deslocamento inicial para o lado do botão "Sim" */
+    top: 0;
     border-radius: 20px;
     width: 150px;
     height: 40px;
     font-size: 15px;
-    font-style: normal;
     font-weight: bold;
     color: #ffffff;
     border-style: inherit;
@@ -125,6 +123,7 @@ body {
     cursor: pointer;
 }
 
+
 @media (max-width: 600px) {
     body {
         font-size: 14px;
@@ -133,3 +132,4 @@ body {
         flex-direction: column;
     }
 }
+
