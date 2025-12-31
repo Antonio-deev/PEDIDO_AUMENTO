@@ -1,0 +1,135 @@
+/* DEFININDO FUNDO DE PAGINA*/
+
+.fundo-gif {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+
+}
+
+/* DEFININDO FORMATAÇÃO DE TEXTOS */
+
+h1 {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    color: rgb(20, 94, 94);
+
+}
+
+h2 {
+
+    margin: 5px;
+    padding: 10px;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: aliceblue;
+    border-style: groove #c20000;
+    border-radius: 5px;
+
+}
+
+p { 
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    background-color: #c20000;
+    color: aliceblue;
+    border-style: dotted;
+
+}
+
+/* DEFININDO FORMATAÇÃO DO CORPO DO SITE */
+
+body {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.contador {
+
+    background-color: aliceblue;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+/* DEFININDO FORMATAÇÃO DE BOTÕES */
+
+.botões{
+
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+
+}
+
+.botões .sim{
+
+    border-radius: 20px;
+    width: 150px;
+    height: 65px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    border-style: inherit;
+    box-shadow: 2px 2px 10px #f3f3f3,
+    inset 1px 1px 5px ;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #4ab147, #6bff6b);
+    cursor: pointer;
+}
+
+.sim:hover {
+    
+    transform: scale(1.1);
+    transition:all 0.2s ease
+
+}
+
+.sim:active {
+
+    transform: (0.95);
+
+}
+
+.botões .nao{
+
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    color: #ffffff;
+
+    border-style: inherit;
+    box-shadow: 2px 2px 10px #f3f3f3,
+    inset 1px 1px 5px ;
+    background: linear-gradient(to bottom, #ff2727, #9c2222);
+    
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
+}
+
+
