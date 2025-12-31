@@ -1,7 +1,5 @@
-/* DEFININDO FUNDO DE PAGINA*/
-
+/* Fundo do site */
 .fundo-gif {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -10,126 +8,102 @@
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
-
 }
 
-/* DEFININDO FORMATAÇÃO DE TEXTOS */
-
+/* Textos */
 h1 {
-
     font-family: Arial, Helvetica, sans-serif;
     background-color: aliceblue;
     border-radius: 20px;
     width: 250px;
     text-align: center;
     color: rgb(20, 94, 94);
-
 }
 
 h2 {
-
     margin: 5px;
     padding: 10px;
     font-size: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
     background-color: aliceblue;
     border-style: groove #c20000;
     border-radius: 5px;
-
 }
 
 p { 
-
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-size: 25px;
     text-align: center;
     background-color: #c20000;
     color: aliceblue;
     border-style: dotted;
-
 }
 
-/* DEFININDO FORMATAÇÃO DO CORPO DO SITE */
-
-body {
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-
-}
-
-.contador {
-
-    background-color: aliceblue;
-    font-style: italic;
-    font-weight: bold;
-
-}
-
-/* DEFININDO FORMATAÇÃO DE BOTÕES */
-
-.botões{
-
-    align-items: center;
+/* Botões */
+.botões {
     display: flex;
     gap: 20px;
+    position: relative; /* container relativo */
+    align-items: center;
+    justify-content: center;
     padding: 10px;
-    position: relative;
     z-index: 10;
-
 }
 
-.botões .sim{
-
+.botões .sim {
     border-radius: 20px;
     width: 150px;
     height: 65px;
     font-size: 15px;
-    font-style: normal;
     font-weight: bold;
+    color: #fff;
     border-style: inherit;
-    box-shadow: 2px 2px 10px #f3f3f3,
-    inset 1px 1px 5px ;
-    color: #ffffff;
+    box-shadow: 2px 2px 10px #f3f3f3, inset 1px 1px 5px;
     background: linear-gradient(to bottom, #4ab147, #6bff6b);
     cursor: pointer;
 }
 
 .sim:hover {
-    
     transform: scale(1.1);
-    transition:all 0.2s ease
-
+    transition: all 0.2s ease;
 }
 
 .sim:active {
-
-    transform: (0.95);
-
+    transform: scale(0.95);
 }
 
-.botões .nao{
-
+/* Botão "Não" inicial ao lado do "Sim" e pronto para fugir */
+.botões .nao {
+    position: absolute; 
+    left: 170px; /* começa ao lado do "Sim" */
+    top: 0;
     border-radius: 20px;
     width: 150px;
     height: 40px;
-
     font-size: 15px;
-    font-style: normal;
     font-weight: bold;
-    color: #ffffff;
-
+    color: #fff;
     border-style: inherit;
-    box-shadow: 2px 2px 10px #f3f3f3,
-    inset 1px 1px 5px ;
+    box-shadow: 2px 2px 10px #f3f3f3, inset 1px 1px 5px;
     background: linear-gradient(to bottom, #ff2727, #9c2222);
-    
     transition: transform 0.2s ease;
     cursor: pointer;
-
 }
 
+/* Contador */
+.contador {
+    background-color: aliceblue;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
+/* Responsivo */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .menu {
+        flex-direction: column;
+    }
+}
