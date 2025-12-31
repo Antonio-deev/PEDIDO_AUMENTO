@@ -4,10 +4,10 @@
     top: 50%;
     left: 50%;
     width: 100%;
-    max-width: 1000px; /* limita a largura máxima */
-    height: auto;       /* mantém proporção do vídeo */
-    transform: translate(-50%, -50%); /* centraliza */
-    object-fit: contain; /* mantém vídeo dentro da tela */
+    max-width: 1000px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
     z-index: -1;
     pointer-events: none;
 }
@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    position: relative; /* necessário para o botão "Não" absoluto */
+    position: relative;
 }
 
 .contador {
@@ -62,7 +62,7 @@ body {
 .botões {
     display: flex;
     gap: 20px;
-    position: relative; /* container relativo */
+    position: relative;
     align-items: center;
     justify-content: center;
     padding: 10px;
@@ -91,11 +91,12 @@ body {
     transform: scale(0.95);
 }
 
-/* Botão "Não" absoluto dentro do container para fugir */
+/* Botão "Não" centralizado e "dançante" */
 .botões .nao {
-    position: absolute; 
-    left: 170px; /* posição inicial ao lado do "Sim" */
-    top: 0;
+    position: fixed; /* fixa na tela */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
     width: 150px;
     height: 40px;
@@ -105,17 +106,15 @@ body {
     border-style: inherit;
     box-shadow: 2px 2px 10px #f3f3f3, inset 1px 1px 5px;
     background: linear-gradient(to bottom, #ff2727, #9c2222);
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
+    z-index: 20;
 }
 
 /* RESPONSIVO */
 @media (max-width: 600px) {
     body {
         font-size: 14px;
-    }
-    .menu {
-        flex-direction: column;
     }
     .fundo-gif {
         max-width: 100%;
